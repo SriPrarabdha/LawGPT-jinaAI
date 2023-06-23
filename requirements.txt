@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+langchain
+pinecone-client
+pinecone-text
+google-search-results
+openai
+urllib3==1.26.15
+nltk
