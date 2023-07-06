@@ -5,7 +5,7 @@ from typing import Dict
 import aiohttp
 from pydantic import BaseModel, ValidationError
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "your key"
 class Response(BaseModel):
     result: str
     error: str
