@@ -37,9 +37,9 @@ def get_answers(question: str, **kwargs) -> str:
     retriever = PineconeHybridSearchRetriever(embeddings=embeddings, sparse_encoder=splade_encoder, index=index)
 
     # setting up open ai env
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = "your key"
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    openai.organization = "org-AzxkHbslquofpvZHMHVgJn0V"
+    openai.organization = "your org key"
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo", verbose=True, streaming=True,
                      callback_manager=CallbackManager([streaming_handler]))
 
@@ -47,7 +47,7 @@ def get_answers(question: str, **kwargs) -> str:
     dnd_qa = RetrievalQA.from_chain_type(llm=llm, chain_type="refine", retriever=retriever,
                                          callback_manager=CallbackManager([streaming_handler]))
 
-    os.environ["SERPAPI_API_KEY"] = "e00164eae98bca5154e0bcea255db4c98d25a7bbe2b037e200e1c99ffb2444af"
+    os.environ["SERPAPI_API_KEY"] = "your serp key"
     search = SerpAPIWrapper()
 
     # Adding tools to help the agent
